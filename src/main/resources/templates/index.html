@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal List</title>
+</head>
+<body>
+<div>
+    <h1>Animal List</h1>
+    <a href="/add">Add New Animal</a>
+    <br/><br/>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Animal Name</th>
+            <th>Animal Age</th>
+            <th>Animal Gender</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="animal, itrStat : ${listAnimal}" th:class="${itrStat.even}? 'even_css_class':'odd_css_class'">
+            <td th:text="${itrStat.index + 1}">ID</td> -
+            <td th:text="${animal.animalName}">Animal Name</td>
+            <td th:text="${animal.animalAge}">Animal Age</td>
+            <td th:text="${animal.animalGender}">Animal Gender</td>
+            <td>
+                <a th:href="@{'/edit/' + ${animal.id}}">Edit</a> || <a th:href="@{'/delete/' + ${animal.id}}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

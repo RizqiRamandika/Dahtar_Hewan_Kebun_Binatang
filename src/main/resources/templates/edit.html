@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Animal</title>
+</head>
+<body>
+<div>
+    <h1>Edit Animal</h1>
+    <br/>
+    <form action="#" th:action="@{/save}" th:object="${animal}" method="post">
+        <table border="0">
+            <tr>
+                <td>Animal Id</td>
+                <td>:</td>
+                <td>
+                    <input type="text" th:field="*{id}" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <td>Animal Name</td>
+                <td>:</td>
+                <td>
+                    <input type="text" th:field="*{animalName}">
+                </td>
+            </tr>
+            <tr>
+                <td>Animal Age</td>
+                <td>:</td>
+                <td>
+                    <input type="number" th:field="*{animalAge}">
+                </td>
+            </tr>
+            <tr>
+                <td>Animal Gender</td>
+                <td>:</td>
+                <td>
+                    <input type="text" th:field="*{animalGender}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
