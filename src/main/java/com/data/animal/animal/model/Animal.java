@@ -3,12 +3,16 @@ package com.data.animal.animal.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "animal")
 public class Animal {
 
+    @Column(name = "animal_name")
     private String animalName;
 
+    @Column(name = "animal_age")
     private String animalAge;
 
+    @Column(name = "animal_gender")
     private String animalGender;
 
     public Animal() {
