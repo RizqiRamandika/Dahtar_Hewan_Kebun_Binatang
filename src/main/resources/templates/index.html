@@ -7,23 +7,23 @@
 <body>
 <div>
     <h1>Animal List</h1>
-    <a href="/add">Add New Animal</a>
+    <a href="/add"><button style="padding:5px">Add New Animal</button></a>
     <br/><br/>
-    <table border="1">
+    <table style="text-align:center" border="1">
         <tr>
-            <th>Id</th>
-            <th>Animal Name</th>
-            <th>Animal Age</th>
-            <th>Animal Gender</th>
-            <th>Action</th>
+            <th style="padding:10px">Id</th>
+            <th style="padding:10px">Animal Name</th>
+            <th style="padding:10px">Animal Age</th>
+            <th style="padding:10px">Animal Gender</th>
+            <th style="padding:10px">Action</th>
         </tr>
         <tr th:each="animal, itrStat : ${listAnimal}" th:class="${itrStat.even}? 'even_css_class':'odd_css_class'">
-            <td th:text="${itrStat.index + 1}">ID</td>
-            <td th:text="${animal.animalName}">Animal Name</td>
-            <td th:text="${animal.animalAge}">Animal Age</td>
-            <td th:text="${animal.animalGender}">Animal Gender</td>
-            <td>
-                <a th:href="@{'/edit/' + ${animal.id}}">Edit</a> || <a th:href="@{'/delete/' + ${animal.id}}">Delete</a>
+            <td th:text="${itrStat.index + 1}" style="padding:10px">ID</td>
+            <td th:text="${animal.animalName}" style="padding:10px">Animal Name</td>
+            <td th:text="${animal.animalAge} + ' ' + 'tahun'" style="padding:10px">Animal Age</td>
+            <td th:text="${animal.animalGender}" style="padding:10px">Animal Gender</td>
+            <td style="padding:10px">
+                <a th:href="@{'/edit/' + ${animal.id}}"><button style="padding:5px">Edit</button></a> || <a th:href="@{'/delete/' + ${animal.id}}"><button style="padding:5px">Delete</button></a>
             </td>
         </tr>
     </table>
